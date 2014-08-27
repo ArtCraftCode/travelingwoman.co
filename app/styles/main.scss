@@ -6,6 +6,7 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   overflow: hidden;
+  overflow-y: hidden;
 }
 
 .layer {
@@ -29,4 +30,18 @@ body {
   padding: 2%;
   overflow-y: scroll;
   overflow-x: hidden;
+}
+
+// for smaller devices with less screen real estate
+// allow for a full browser scroll instead of the div
+@media (max-width: 600px) {
+  body {
+    overflow-y: scroll;
+  }
+
+  .container {
+    overflow-y: visible;
+    overflow-x: visible;
+    height: auto;
+  }
 }
