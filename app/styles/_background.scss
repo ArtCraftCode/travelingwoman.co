@@ -1,0 +1,39 @@
+$landscapeLarge: 1200;
+$landscapeMedium: 800;
+$landscapeSmall: 600;
+
+$portraitLarge: 800;
+$portraitMedium: 600;
+$portraitSmall: 400;
+
+@mixin landscape($size) {
+  body { background-image: url("../images/#{$size}.jpg"); }
+}
+
+@mixin portrait($size) {
+  body { background-image: url("../images/v-#{$size}.jpg"); }
+}
+
+@media (min-width: #{($landscapeMedium + 1)}px) and (orientation: landscape) {
+  @include landscape($landscapeLarge);
+}
+
+@media (max-width: #{$landscapeMedium}px) and (orientation: landscape) {
+  @include landscape($landscapeMedium);
+}
+
+@media (max-width: #{$landscapeSmall}px) and (orientation: landscape) {
+  @include landscape($landscapeSmall);
+}
+
+@media (min-width: #{($portraitMedium + 1)}px) and (orientation: portrait) {
+  @include portrait($portraitLarge);
+}
+
+@media (max-width: #{$portraitMedium}px) and (orientation: portrait) {
+  @include portrait($portraitMedium);
+}
+
+@media (max-width: #{$portraitSmall}px) and (orientation: portrait) {
+  @include portrait($portraitSmall);
+}
