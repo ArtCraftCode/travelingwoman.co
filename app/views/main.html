@@ -1,13 +1,29 @@
 <div class="header">
   <h1 class="script">Traveling Woman</h1>
-  <h2 class="script">Pattern Generator</h2>
+  <h2 class="script">A uniquely simple lace shawl.</h2>
 </div>
 
+<div class="content">
+  <p>
+    Traveling Woman is a popular, easy-to-work knitting pattern that is well suited for advanced and beginning knitters with more than 8,000 projects on <a href="http://www.ravelry.com/patterns/library/traveling-woman">Ravelry</a>.
+  </p>
 
-<form name="generator" class="pure-form">
-  <label for="repeats"><p>How many lace motif repeats do you want <strong>across the width</strong> of the shawl?</p></label>
-  <select name="repeats" id="repeats">
-    <option ng-repeat="repeat in repeats" value="{{ repeat }}">{{ repeat }}</option>
-  </select>
-  <em>The original pattern contains 11 repeats.</em>
-</form>
+  <p>
+    Originally released as a free pattern, Traveling Woman is easy to customize and knit in any size you like. The free pattern includes a formula for customizing the shawl size, but it's not always as easy as plugging numbers into a calculator. In an effort to make the pattern more accessible, I've created this pattern generator.
+  </p>
+
+  <p>
+    Traveling Woman is also available in a premium version. The premium version ($6 USD) comes with written and charted instructions for 11 sizes in 5 different yarn weights. <strong>This pattern generator is not the same as the premium version of the pattern</strong> and does not serve as a replacement for the content in the premium pattern. The premium version also contains additional options for customization, such as eyelets and unique charts for lighter weight yarns.<br>
+    <a href="http://www.ravelry.com/purchase/feministy/20831"><img src="http://www.ravelry.com/images/shopping/buy-now.gif" border="0"/></a>
+  </p>
+
+  <h2 class="script center">Pattern Generator</h2>
+
+  <form name="generator" class="pure-form">
+    <label for="repeats"><p>How many lace motif repeats do you want <strong>across the width</strong> of the shawl?</p></label>
+    <select name="repeats" id="repeats">
+      <option ng-repeat="repeat in repeats" value="{{ repeat }}">{{ repeat }}</option>
+    </select>
+    <em>The original pattern contains 11 repeats.</em>
+  </form>
+</div>
