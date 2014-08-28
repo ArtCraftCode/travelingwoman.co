@@ -21,3 +21,11 @@ h2 {
 h3 {
   @extend %ssh;
 }
+
+.script {
+  font-family: $script;
+}
+
+em {
+  font-style: italic;
+}
