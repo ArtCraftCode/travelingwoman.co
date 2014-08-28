@@ -1,4 +1,7 @@
 // http://www.sitepoint.com/using-sass-build-custom-type-scale-vertical-rhythm/
+$base-font-size: 14px;
+$base-line-height: 1.3;
+$scale: 1.5;
 
 $breakpoints: (
   small: 480px,
