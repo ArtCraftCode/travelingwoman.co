@@ -16,6 +16,10 @@ body {
   line-height: $base-line-height;
 }
 
+p {
+  margin: 1.1em 0;
+}
+
 h1 {
   @include fontStack(2);
 }
@@ -32,8 +36,16 @@ h3 {
   font-family: $script;
 }
 
+.center {
+  text-align: center;
+}
+
 em {
   font-style: italic;
+}
+
+strong {
+  font-weight: 700;
 }
 
 .header {
