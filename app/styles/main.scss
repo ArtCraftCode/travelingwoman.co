@@ -3,47 +3,12 @@
 @import "background";
 @import "typography";
 
-body {
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  overflow: hidden;
-  overflow-y: hidden;
-}
-
-.layer {
-  background: #999999;
-  width: 100%;
-  height: 100vh;
-  opacity: 0.5;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: -1;
-}
-
 .container {
   margin: 2% auto;
-  width: 75vw;
-  height: 87vh;
-  max-width: 960px;
-  background: #ffffff;
-  opacity: 0.8;
   padding: 2%;
-  overflow-y: scroll;
-  overflow-x: hidden;
+  max-width: 960px;
 }
 
-// for smaller devices with less screen real estate
-// allow for a full browser scroll instead of the div
-@media (max-width: 600px) {
-  body {
-    overflow-y: scroll;
-  }
-
-  .container {
-    overflow-y: visible;
-    overflow-x: visible;
-    height: auto;
-  }
+.content {
+  padding: 4% 0;
 }

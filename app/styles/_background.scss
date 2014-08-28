@@ -1,39 +1,44 @@
-$landscapeLarge: 1200;
-$landscapeMedium: 800;
-$landscapeSmall: 600;
+$sizes: (
+  large: (
+    width: 1200,
+    height: 335
+  ),
 
-$portraitLarge: 800;
-$portraitMedium: 600;
-$portraitSmall: 400;
+  medium: (
+    width: 800,
+    height: 220
+  ),
+
+  small: (
+    width: 600,
+    height: 165
+  )
+);
+
 
 @mixin landscape($size) {
-  body { background-image: url("../images/#{$size}.jpg"); }
+  $image: getget($size, width);
+  $height: getget($size, height);
+
+  #background {
+    background-image: url("../images/crop-#{$image}.jpg");
+    background-size: 100%;
+    height: #{$height*0.5}px;
+  }
 }
 
-@mixin portrait($size) {
-  body { background-image: url("../images/v-#{$size}.jpg"); }
+@function getget($size, $dimension) {
+  @return map-get(map-get($sizes, $size), $dimension);
 }
 
-@media (min-width: #{($landscapeMedium + 1)}px) and (orientation: landscape) {
-  @include landscape($landscapeLarge);
+@media (min-width: #{(getget(medium, width) + 1)}px) {
+  @include landscape(large);
 }
 
-@media (max-width: #{$landscapeMedium}px) and (orientation: landscape) {
-  @include landscape($landscapeMedium);
+@media (max-width: #{getget(medium, width)}px) {
+  @include landscape(medium);
 }
 
-@media (max-width: #{$landscapeSmall}px) and (orientation: landscape) {
-  @include landscape($landscapeSmall);
-}
-
-@media (min-width: #{($portraitMedium + 1)}px) and (orientation: portrait) {
-  @include portrait($portraitLarge);
-}
-
-@media (max-width: #{$portraitMedium}px) and (orientation: portrait) {
-  @include portrait($portraitMedium);
-}
-
-@media (max-width: #{$portraitSmall}px) and (orientation: portrait) {
-  @include portrait($portraitSmall);
+@media (max-width: #{getget(small, width)}px) {
+  @include landscape(small);
 }
