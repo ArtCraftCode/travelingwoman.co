@@ -9,9 +9,5 @@
  */
 angular.module('travelingWomanApp')
   .controller('MainCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+    $scope.repeats = [7, 9, 11, 13, 15, 17, 19, 21];
   });

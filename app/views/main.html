@@ -1,7 +1,13 @@
-<h1 class="script">Traveling Woman</h1>
-<h2>Pattern Generator</h2>
+<div class="header">
+  <h1 class="script">Traveling Woman</h1>
+  <h2 class="script">Pattern Generator</h2>
+</div>
 
-<form name="generator">
+
+<form name="generator" class="pure-form">
   <label for="repeats"><p>How many lace motif repeats do you want <strong>across the width</strong> of the shawl?</p></label>
+  <select name="repeats" id="repeats">
+    <option ng-repeat="repeat in repeats" value="{{ repeat }}">{{ repeat }}</option>
+  </select>
   <em>The original pattern contains 11 repeats.</em>
 </form>
