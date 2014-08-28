@@ -1,25 +1,31 @@
-$script: "bello-pro", cursive;
+$script: "ff-prater-script-web", cursive;
 $font: "franklin-gothic-urw", "Arial", sans-serif;
+
+$base-font-size: 1.1em;
+$base-line-height: 1.75em;
+$scale: 1.5;
+
+@mixin fontStack($n) {
+  font-size: $base-font-size * ($scale * $n);
+  line-height: $base-line-height - 0.25;
+}
 
 body {
   font-family: $font;
-  @extend %p;
-}
-
-p {
-  @extend %p;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
 }
 
 h1 {
-  @extend %h;
+  @include fontStack(2);
 }
 
 h2 {
-  @extend %sh;
+  @include fontStack(1.5);
 }
 
 h3 {
-  @extend %ssh;
+  @include fontStack(1);
 }
 
 .script {
@@ -28,4 +34,9 @@ h3 {
 
 em {
   font-style: italic;
+}
+
+.header {
+  text-align: center;
+  font-size: 150%;
 }
