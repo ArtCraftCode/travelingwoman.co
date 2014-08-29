@@ -49,3 +49,9 @@ table.pure-table {
   padding-top: 3%;
   @include border(top);
 }
+
+.border-top {
+  margin-top: 5%;
+  padding-top: 5%;
+  @include border(top);
+}
