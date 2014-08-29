@@ -5,6 +5,10 @@
 
 $color: #333;
 
+@mixin border($location) {
+  border-#{$location}: 1px dotted lighten($color, 60%);
+}
+
 body {
   color: $color;
 }
@@ -26,7 +30,7 @@ label {
 a {
   text-decoration: none;
   color: lighten($color, 40%);
-  border-bottom: 1px dotted lighten($color, 60%);
+  @include border(bottom);
 }
 
 table.pure-table {
@@ -35,4 +39,10 @@ table.pure-table {
       font-weight: 500;
     }
   }
+}
+
+#footer {
+  margin-top: 7%;
+  padding-top: 3%;
+  @include border(top);
 }
