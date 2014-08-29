@@ -7,7 +7,7 @@
 <div class="setup" ng-hide="complete">
   <div class="content">
     <p>
-      Traveling Woman is a popular, easy-to-work knitting pattern that is well suited for advanced and beginning knitters with more than 8,000 projects on <a href="http://www.ravelry.com/patterns/library/traveling-woman">Ravelry</a>.
+      Traveling Woman is a popular, easy-to-work knitting pattern that is well suited for advanced and beginning knitters. It has more than 8,000 projects on <a href="http://www.ravelry.com/patterns/library/traveling-woman">Ravelry</a>!
     </p>
 
     <p>
@@ -27,8 +27,8 @@
       <label for="repeats">
         How many lace motif repeats do you want across the width of the shawl?
       </label>
-      <select name="repeats" id="repeats">
-        <option ng-model="repeat" ng-repeat="repeat in repeats" value="{{ repeat }}" required>{{ repeat }}</option>
+      <select name="repeats" id="repeats" ng-model="repeat">
+        <option ng-repeat="rpt in repeats" value="{{ rpt }}" required>{{ rpt }}</option>
       </select>
       <p>
         The original pattern contains 11 repeats. <em>More repeats means more stockinette in your shawl's body.</em>
@@ -37,8 +37,8 @@
       <label for="charts">
         How many times do you want to repeat the main lace motif?
       </label>
-      <select name="charts" id="charts">
-        <option ng-model="chart" ng-repeat="chart in charts" value="{{ chart }}" required>{{ chart }}</option>
+      <select name="charts" id="charts" ng-model="chart">
+        <option ng-repeat="chart in charts" value="{{ chart }}" required>{{ chart }}</option>
       </select>
       <p>
         The original pattern contains 2 repeats of the main chart.
@@ -51,7 +51,7 @@
 
 <div class="instructions" ng-show="complete">
   <div class="content">
-    <h3>Instructions</h3>
+    <h3>Pattern</h3>
     <p>
       The generator does not calculate yardage. If you're looking for yardage estimates, see the premium version of the pattern ($6).
       <Br>
@@ -90,9 +90,30 @@
         <td>{{ abbrev.definition }}</td>
       </tr>
     </table>
+  </div>
+
+  <div class="content">
+    <h4>Pattern</h4>
+
+    <p><strong>Set Up Rows</strong></p>
+
+    <p>CO 3 sts. Knit 6 rows. Pick up and knit 6 sts along the long edge and cast on edge (9 sts).</p>
+
+    <table class="pure-table pure-table-horizontal">
+      <tr ng-repeat="row in setUpInstructions">
+        <td>Row {{ row.number }}</td>
+        <td>{{ row.instructions }}</td>
+        <td>{{ row.stitches }} sts</td>
+      </tr>
+    </table>
+
+    <p>Repeat Rows 3 and 4 <strong>{{ numRepeats }} times</strong> ({{ numRepeatsSts }} sts).</p>
+
+    <p><strong>Next row:</strong> {{ nextRow }} ({{ total }} sts).</p>
+
+    <p>You should be ready to begin a RS row.</p>
 
     <p>
       <input class="pure-button" type="submit" ng-click="regenerate()" value="Regenerate">
     </p>
-  </div>
 </div>
