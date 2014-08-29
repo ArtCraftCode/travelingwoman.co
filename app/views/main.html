@@ -1,47 +1,94 @@
 <div class="header">
   <h1 class="script">Traveling Woman</h1>
-  <h2 class="script">A uniquely simple lace shawl.</h2>
+  <h2 class="script" ng-hide="complete">A uniquely simple lace shawl.</h2>
+  <h2 class="script" ng-show="complete">Pattern Instructions</h2>
 </div>
 
-<div class="content">
-  <p>
-    Traveling Woman is a popular, easy-to-work knitting pattern that is well suited for advanced and beginning knitters with more than 8,000 projects on <a href="http://www.ravelry.com/patterns/library/traveling-woman">Ravelry</a>.
-  </p>
+<div class="setup" ng-hide="complete">
+  <div class="content">
+    <p>
+      Traveling Woman is a popular, easy-to-work knitting pattern that is well suited for advanced and beginning knitters with more than 8,000 projects on <a href="http://www.ravelry.com/patterns/library/traveling-woman">Ravelry</a>.
+    </p>
 
-  <p>
-    Originally released as a free pattern, Traveling Woman is easy to customize and knit in any size you like. The free pattern includes a formula for customizing the shawl size, but it's not always as easy as plugging numbers into a calculator. In an effort to make the pattern more accessible, I've created this pattern generator.
-  </p>
+    <p>
+      Originally released as a free pattern, Traveling Woman is easy to customize and knit in any size you like. The free pattern includes a formula for customizing the shawl size, but it's not always as easy as plugging numbers into a calculator. In an effort to make the pattern more accessible, I've created this pattern generator.
+    </p>
 
-  <p>
-    Traveling Woman is also available in a premium version. The premium version ($6 USD) comes with written and charted instructions for 11 sizes in 5 different yarn weights. <strong>This pattern generator is not the same as the premium version of the pattern</strong> and does not serve as a replacement for the content in the premium pattern. The premium version also contains additional options for customization, such as eyelets and unique charts for lighter weight yarns.<br>
-    <a href="http://www.ravelry.com/purchase/feministy/20831"><img src="http://www.ravelry.com/images/shopping/buy-now.gif" border="0"/></a>
-  </p>
+    <p>
+      Traveling Woman is also available in a premium version. The premium version ($6 USD) comes with written and charted instructions for 11 sizes in 5 different yarn weights. <strong>This pattern generator is not the same as the premium version of the pattern</strong> and does not serve as a replacement for the content in the premium pattern. The premium version also contains additional options for customization, such as eyelets and unique charts for lighter weight yarns.<br>
+      <a href="http://www.ravelry.com/purchase/feministy/20831"><img src="http://www.ravelry.com/images/shopping/buy-now.gif" border="0"/></a>
+    </p>
+  </div>
+
+  <h2 class="script center">Pattern Generator</h2>
+
+  <div class="content">
+    <form name="generator" class="pure-form" novalidate>
+      <label for="repeats">
+        How many lace motif repeats do you want across the width of the shawl?
+      </label>
+      <select name="repeats" id="repeats">
+        <option ng-model="repeat" ng-repeat="repeat in repeats" value="{{ repeat }}" required>{{ repeat }}</option>
+      </select>
+      <p>
+        The original pattern contains 11 repeats. <em>More repeats means more stockinette in your shawl's body.</em>
+      </p>
+
+      <label for="charts">
+        How many times do you want to repeat the main lace motif?
+      </label>
+      <select name="charts" id="charts">
+        <option ng-model="chart" ng-repeat="chart in charts" value="{{ chart }}" required>{{ chart }}</option>
+      </select>
+      <p>
+        The original pattern contains 2 repeats of the main chart.
+      </p>
+
+      <input class="pure-button" type="submit" ng-click="generate()" ng-disabled="!generator.$valid">
+    </form>
+  </div>
 </div>
 
-<h2 class="script center">Pattern Generator</h2>
-
-<div class="content">
-  <form name="generator" class="pure-form" novalidate>
-    <label for="repeats">
-      How many lace motif repeats do you want across the width of the shawl?
-    </label>
-    <select name="repeats" id="repeats">
-      <option ng-model="repeat" ng-repeat="repeat in repeats" value="{{ repeat }}" required>{{ repeat }}</option>
-    </select>
+<div class="instructions">
+  <div class="content">
+    <h3>Instructions</h3>
     <p>
-      The original pattern contains 11 repeats. <em>More repeats means more stockinette in your shawl's body.</em>
+      The generator does not calculate yardage. If you're looking for yardage estimates, see the premium version of the pattern ($6).
+      <Br>
+      <a href="http://www.ravelry.com/purchase/feministy/20831"><img src="http://www.ravelry.com/images/shopping/buy-now.gif" border="0"/></a>
+    </p>
+    <p>
+      Always slip markers as you come to them. I have indicated where to slip the marker in the set-up rows, but beyond that, you will need to remember. All stitches should be slipped knitwise unless indicated.
+    </p>
+    <p>
+      The shawl gets its unique shallow shape from the increases. In the stockinette stitch portion on right side rows, you increase four stitches. On wrong side rows, you increase two stitches. In the lace portion, you increase two stitches on both right and wrong side rows (you omit the increases along the center stitch).
     </p>
 
-    <label for="charts">
-      How many times do you want to repeat the main lace motif?
-    </label>
-    <select name="charts" id="charts">
-      <option ng-model="chart" ng-repeat="chart in charts" value="{{ chart }}" required>{{ chart }}</option>
-    </select>
+    <h4>Materials</h4>
     <p>
-      The original pattern contains 2 repeats of the main chart.
+      <strong>Yarn</strong>
+      <Br>
+      Whatever you want! I suggest you use a needle several sizes larger than called for by the band. For fingering weight yarns, I recommend a US 6 (4.0mm) needle.
     </p>
 
-    <input class="pure-button" type="submit" ng-disabled="!generator.$valid">
-  </form>
+    <p>
+      <strong>Gauge</strong>
+      <Br>
+      Up to you, but the looser your gauge the more drape.
+    </p>
+
+    <p>
+      <strong>Notions</strong>
+      <Br>
+      4 stitch markers and a darning needle.
+    </p>
+
+    <h4>Abbreviations</h4>
+    <table class="pure-table pure-table-horizontal">
+      <tr ng-repeat="abbrev in abbreviations">
+        <td>{{ abbrev.stitch }}</td>
+        <td>{{ abbrev.definition }}</td>
+      </tr>
+    </table>
+  </div>
 </div>
