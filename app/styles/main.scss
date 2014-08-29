@@ -38,6 +38,9 @@ table.pure-table {
     td:first-child {
       font-weight: 500;
     }
+    td:nth-child(3) {
+      color: lighten($color, 50%);
+    }
   }
 }
 
