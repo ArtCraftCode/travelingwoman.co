@@ -8,6 +8,7 @@ $scale: 1.5;
 @mixin fontStack($n) {
   font-size: $base-font-size * ($scale * $n);
   line-height: $base-line-height - 0.25;
+  font-weight: 500;
 }
 
 body {
@@ -30,6 +31,12 @@ h2 {
 
 h3 {
   @include fontStack(1);
+  font-weight: 700;
+}
+
+h4 {
+  @include fontStack(0.8);
+  font-weight: 500;
 }
 
 .script {
