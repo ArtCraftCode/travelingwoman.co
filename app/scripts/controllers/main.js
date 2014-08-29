@@ -50,6 +50,84 @@ angular.module('travelingWomanApp')
       }
     ];
 
+    $scope.chartA = [
+      {
+        'number': '1',
+        'instructions': 'k1, *yo, k5, slk2p, k5, yo, k1 repeat from * to end'
+      },
+      {
+        'number': '2, and all WS rows',
+        'instructions': 'k the k sts, p the p sts (consult chart if this does not make sense)'
+      },
+      {
+        'number': '3',
+        'instructions': 'k2, p1, *k1, yo, k4, slk2p, k4, yo, k1, p1 repeat from * to last 2 sts, k2'
+      },
+      {
+        'number': '5',
+        'instructions': 'k2tog, yo, k2, p1, *k2, yo, k3, slk2p, k3, yo, k2, p1 repeat from * to last 4 sts, k2, yo, ssk'
+      },
+      {
+        'number': '7',
+        'instructions': 'k1, k2tog, yo, k3, p1, *k3, yo, k2, slk2p, k2, yo, k3, p1 repeat from * to last 6 sts, k3, yo, ssk, k1'
+      },
+      {
+        'number': '9',
+        'instructions': 'k1, k2tog, k1, yo, k4, p1, *k4, yo, k1, slk2p, k1, yo, k4, p1 repeat from * to last 8 sts, k4, yo, k1, ssk, k1'
+      },
+      {
+        'number': '11',
+        'instructions': 'k4, yo, k1, yo, k5, p1, *k5, yo, slk2p, yo, k5, p1 repeat from * to last 10 sts, k5, yo, k1, yo, k4'
+      }
+    ];
+
+    $scope.chartB = [
+      {
+        'number' : '1',
+        'instructions': 'k1, *yo, k5, slk2p, k5, yo, k1 repeat from * to end'
+      },
+      {
+        'number': '2, and all WS rows',
+        'instructions': 'k the k sts, p the p sts (consult chart if this does not make sense)'
+      },
+      {
+        'number' : '3',
+        'instructions': 'k2, p1, *k1, yo, k4, slk2p, k4, yo, k1, p1 repeat from * to last 2 sts, k2'
+      },
+      {
+        'number' : '5',
+        'instructions': 'k2tog, yo, k2, p1, *k2, yo, k3, slk2p, k3, yo, k2, p1 repeat from * to last 4 sts, k2, to, ssk'
+      },
+      {
+        'number' : '7',
+        'instructions': 'k1, k2tog, yo, k3, p1, *k3, yo, k2, slk2p, k2, yo, k3, p1 repeat from * to last 6 sts, k3, yo, ssk, k1'
+      },
+      {
+        'number': '9',
+        'instructions': '*k2, k2tog, yo repeat from * 2x, p1, *yo, ssk, k2, yo, k1, slk2p, k1, yo, k2, k2tog, yo, p1 repeat from * to last 8 sts, *yo, ssk, k2 repeat from * 2x'
+      },
+      {
+        'number': '11',
+        'instructions': 'k3, k2tog, yo, k2, k2tog, yo, k1, p1, *k1, yo, ssk, k2, yo, slk2p, yo, k2, k2tog, yo, k1, p1 repeat from * to last 10 sts, k1, yo, ssk, k2, yo, ssk, k3'
+      },
+      {
+        'number' : '13',
+        'instructions': 'k1, yo, ssk, k5, k2tog, yo, k2, p1, *(yo, ssk) 2x, k5, (k2tog, yo) 2x, p1 repeat from * to last 12 sts, k2, yo, ssk, k5, k2tog, yo, k1'
+      },
+      {
+        'number' : '15',
+        'instructions': 'k2, *yo,ssk repeat from * 2x, k3, *k2tog, yo repeat from * 2x, k1, p1, *k1, (yo, ssk) 2x, k3, (k2tog, yo) 2x, k1, p1 repeat from * to last 14 sts, k1, *yo, ssk repeat from * 2x, k3, *k2tog, yo repeat from * 2x, k2'
+      },
+      {
+        'number' : '17',
+        'instructions': 'k3, yo, *ssk, yo repeat from * 2x, k1, slk2p, k1, yo, *k2tog, yo repeat from * 2x, p1, *yo, (ssk, yo) 2x, k1, slk2p, k1, yo, (k2tog, yo) 2x, p1 repeat from * to last 16 sts, yo, *ssk, yo repeat from * 2x, k1, slk2p, k1, yo, *k2tog, yo repeat from * 2x, k3'
+      },
+      {
+        'number' : '19',
+        'instructions': 'k4, yo, *ssk, yo repeat from * 3x, slk2p, yo, *k2tog, yo repeat from * 2x, k1, p1 *k1, yo, (ssk, yo) 2x, slk2p, yo, (k2tog, yo) 2x, k1, p1 repeat from * to last 18 sts, k1, yo, *ssk, yo repeat from * 3x, slk2p, yo, *k2tog, yo repeat from * 2x, k4'
+      }
+    ];
+
     $scope.generate = function() {
       $scope.complete = true;
       maths();

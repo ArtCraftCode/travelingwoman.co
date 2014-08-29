@@ -27,8 +27,8 @@
       <label for="repeats">
         How many lace motif repeats do you want across the width of the shawl?
       </label>
-      <select name="repeats" id="repeats" ng-model="repeat">
-        <option ng-repeat="rpt in repeats" value="{{ rpt }}" required>{{ rpt }}</option>
+      <select name="repeats" id="repeats" ng-model="repeat" required>
+        <option ng-repeat="rpt in repeats" value="{{ rpt }}">{{ rpt }}</option>
       </select>
       <p>
         The original pattern contains 11 repeats. <em>More repeats means more stockinette in your shawl's body.</em>
@@ -37,8 +37,8 @@
       <label for="charts">
         How many times do you want to repeat the main lace motif?
       </label>
-      <select name="charts" id="charts" ng-model="chart">
-        <option ng-repeat="chart in charts" value="{{ chart }}" required>{{ chart }}</option>
+      <select name="charts" id="charts" ng-model="chart" required>
+        <option ng-repeat="chart in charts" value="{{ chart }}">{{ chart }}</option>
       </select>
       <p>
         The original pattern contains 2 repeats of the main chart.
@@ -64,7 +64,7 @@
       The shawl gets its unique shallow shape from the increases. In the stockinette stitch portion on right side rows, you increase four stitches. On wrong side rows, you increase two stitches. In the lace portion, you increase two stitches on both right and wrong side rows (you omit the increases along the center stitch).
     </p>
 
-    <h4>Materials</h4>
+    <h4 class="border-top">Materials</h4>
     <p>
       <strong>Yarn</strong>
       <Br>
@@ -83,17 +83,15 @@
       4 stitch markers and a darning needle.
     </p>
 
-    <h4>Abbreviations</h4>
+    <h4 class="border-top">Abbreviations</h4>
     <table class="pure-table pure-table-horizontal">
       <tr ng-repeat="abbrev in abbreviations">
         <td>{{ abbrev.stitch }}</td>
         <td>{{ abbrev.definition }}</td>
       </tr>
     </table>
-  </div>
 
-  <div class="content">
-    <h4>Pattern</h4>
+    <h4 class="border-top">Pattern</h4>
 
     <p><strong>Set Up Rows</strong></p>
 
@@ -112,6 +110,52 @@
     <p><strong>Next row:</strong> {{ nextRow }} ({{ total }} sts).</p>
 
     <p>You should be ready to begin a RS row.</p>
+
+    <h4 class="border-top">Lace</h4>
+
+    <p>Work Chart A a total of <strong>{{ chart }} times</strong>. Work Chart B once.</p>
+
+    <h4 class="border-top">Finishing</h4>
+
+    <p>Bind off on the WS row as follows:</p>
+
+    <p>p2tog, *sl st back to left needle, p2tog*, repeat to end.</p>
+
+    <p>When blocking, the shawl can have slight points, or be blocked straight along the BO edge. It is pictured with small points.</p>
+
+    <h4 class="border-top">Charts</h4>
+
+    <p>See below for written instructions.</p>
+
+    <p class="center">
+      <img src="images/legend.jpg" alt="chart A">
+    </p>
+
+    <p class="center">
+      <img src="images/Chart-A.jpg" alt="chart A">
+    </p>
+
+    <p class="center">
+      <img src="images/Chart-B.jpg" alt="chart B">
+    </p>
+
+    <h4 class="border-top">Written Instructions</h4>
+
+    <p><strong>Chart A</strong></p>
+    <table class="pure-table pure-table-horizontal">
+      <tr ng-repeat="row in chartA">
+        <td>Row {{ row.number }}</td>
+        <td>{{ row.instructions }}</td>
+      </tr>
+    </table>
+
+    <p><strong>Chart B</strong></p>
+    <table class="pure-table pure-table-horizontal">
+      <tr ng-repeat="row in chartB">
+        <td>Row {{ row.number }}</td>
+        <td>{{ row.instructions }}</td>
+      </tr>
+    </table>
 
     <p>
       <input class="pure-button" type="submit" ng-click="regenerate()" value="Regenerate">
