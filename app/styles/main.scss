@@ -28,3 +28,11 @@ a {
   color: lighten($color, 40%);
   border-bottom: 1px dotted lighten($color, 60%);
 }
+
+table.pure-table {
+  tr {
+    td:first-child {
+      font-weight: 500;
+    }
+  }
+}
