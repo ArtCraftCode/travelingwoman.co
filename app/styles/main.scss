@@ -3,6 +3,12 @@
 @import "background";
 @import "typography";
 
+$color: #333;
+
+body {
+  color: $color;
+}
+
 .container {
   margin: 2% auto;
   padding: 2%;
@@ -11,4 +17,14 @@
 
 .content {
   padding: 4% 0;
+}
+
+label {
+  font-weight: 500;
+}
+
+a {
+  text-decoration: none;
+  color: lighten($color, 40%);
+  border-bottom: 1px dotted lighten($color, 60%);
 }

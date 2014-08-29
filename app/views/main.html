@@ -16,14 +16,32 @@
     Traveling Woman is also available in a premium version. The premium version ($6 USD) comes with written and charted instructions for 11 sizes in 5 different yarn weights. <strong>This pattern generator is not the same as the premium version of the pattern</strong> and does not serve as a replacement for the content in the premium pattern. The premium version also contains additional options for customization, such as eyelets and unique charts for lighter weight yarns.<br>
     <a href="http://www.ravelry.com/purchase/feministy/20831"><img src="http://www.ravelry.com/images/shopping/buy-now.gif" border="0"/></a>
   </p>
+</div>
 
-  <h2 class="script center">Pattern Generator</h2>
+<h2 class="script center">Pattern Generator</h2>
 
-  <form name="generator" class="pure-form">
-    <label for="repeats"><p>How many lace motif repeats do you want <strong>across the width</strong> of the shawl?</p></label>
+<div class="content">
+  <form name="generator" class="pure-form" novalidate>
+    <label for="repeats">
+      How many lace motif repeats do you want across the width of the shawl?
+    </label>
     <select name="repeats" id="repeats">
-      <option ng-repeat="repeat in repeats" value="{{ repeat }}">{{ repeat }}</option>
+      <option ng-model="repeat" ng-repeat="repeat in repeats" value="{{ repeat }}" required>{{ repeat }}</option>
     </select>
-    <em>The original pattern contains 11 repeats.</em>
+    <p>
+      The original pattern contains 11 repeats. <em>More repeats means more stockinette in your shawl's body.</em>
+    </p>
+
+    <label for="charts">
+      How many times do you want to repeat the main lace motif?
+    </label>
+    <select name="charts" id="charts">
+      <option ng-model="chart" ng-repeat="chart in charts" value="{{ chart }}" required>{{ chart }}</option>
+    </select>
+    <p>
+      The original pattern contains 2 repeats of the main chart.
+    </p>
+
+    <input class="pure-button" type="submit" ng-disabled="!generator.$valid">
   </form>
 </div>
