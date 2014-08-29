@@ -33,4 +33,8 @@ angular.module('travelingWomanApp')
     $scope.generate = function() {
       $scope.complete = true;
     };
+
+    $scope.regenerate = function() {
+      $scope.complete = false;
+    };
   });
