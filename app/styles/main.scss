@@ -3,6 +3,9 @@
 @import "background";
 @import "typography";
 
+@import "prism";
+@import "prism-knitting";
+
 $color: #333;
 
 @mixin border($location) {
