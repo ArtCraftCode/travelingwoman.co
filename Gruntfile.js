@@ -21,6 +21,8 @@ module.exports = function (grunt) {
     dist: 'dist'
   };
 
+  grunt.loadNpmTasks('grunt-s3');
+
   // Define the configuration for all the tasks
   grunt.initConfig({
 
@@ -402,7 +404,8 @@ module.exports = function (grunt) {
         dist: {
             options: {
                 encodePaths: true,
-                maxOperations: 20
+                maxOperations: 1,
+                region: 'us-east-1'
             },
             upload: [{
                 src: 'dist/**',
