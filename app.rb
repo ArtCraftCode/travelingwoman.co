@@ -17,11 +17,6 @@ helpers do
   def current_user
     !session[:uid].nil?
   end
-
-  def assets_path(type)
-    return "/dist/#{type}" if DEVELOPMENT
-    return "/#{type}"
-  end
 end
 
 get '/' do
