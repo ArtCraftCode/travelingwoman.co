@@ -1,11 +1,11 @@
 {
-  "name": "studio-web",
+  "name": "travelingwoman.co",
   "version": "1.0.0",
-  "description": "ui for studio",
+  "description": "traveling woman pattern, free and pair",
   "main": "src/scripts/index.js",
   "scripts": {
     "copy:html": "cp src/*.html dist/ && cp -r src/templates/ dist/templates/",
-    "copy:static": "cp -r src/assets/ dist/assets/ && cp src/scss/font_awesome.css dist/css/font_awesome.css",
+    "copy:static": "cp -r src/assets/ dist/assets/",
     "build": "echo '... building' npm run minify:js -s && npm run build:css",
     "build:js": "browserify src/scripts/index.js -o dist/js/index.js",
     "build:css": "node-sass --include-path scss src/scss/main.scss dist/css/main.css",
@@ -16,14 +16,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ArtCraftCode/studio-web.git"
+    "url": "https://github.com/ArtCraftCode/travelingwoman.co.git"
   },
   "author": "@feministy",
   "license": "mine",
   "bugs": {
-    "url": "https://github.com/ArtCraftCode/studio-web/issues"
+    "url": "https://github.com/ArtCraftCode/travelingwoman.co/issues"
   },
-  "homepage": "https://github.com/ArtCraftCode/studio-web",
+  "homepage": "https://github.com/ArtCraftCode/travelingwoman.co",
   "devDependencies": {
     "browserify": "^12.0.1",
     "http-server": "^0.8.5",
