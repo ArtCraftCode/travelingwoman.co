@@ -4,15 +4,14 @@
   "description": "traveling woman pattern, free and pair",
   "main": "src/scripts/index.js",
   "scripts": {
-    "copy:html": "cp src/*.html dist/ && cp -r src/templates/ dist/templates/",
-    "copy:static": "cp -r src/assets/ dist/assets/",
+    "copy:static": "cp -r src/assets/ public/assets/",
     "build": "echo '... building' npm run minify:js -s && npm run build:css",
-    "build:js": "browserify src/scripts/index.js -o dist/js/index.js",
-    "build:css": "node-sass --include-path scss src/scss/main.scss dist/css/main.css",
-    "build:dev": "npm run build:css & npm run build:js & npm run copy:html",
-    "minify:js": "echo '... minify:js' && uglifyjs src/scripts/index.js -o dist/js/index.min.js",
-    "start": "npm run watch & http-server dist/",
-    "watch": "nodemon --watch src/ -e scss,js,html -x 'npm run build:dev'"
+    "build:js": "browserify src/scripts/index.js -o public/js/index.js",
+    "build:css": "node-sass --include-path scss src/scss/main.scss public/css/main.css",
+    "build:dev": "npm run build:css & npm run build:js",
+    "minify:js": "echo '... minify:js' && uglifyjs src/scripts/index.js -o public/js/index.min.js",
+    "start": "npm run watch & http-server public/",
+    "watch": "nodemon --watch src/ -e scss,js -x 'npm run build:dev'"
   },
   "repository": {
     "type": "git",
@@ -33,7 +32,6 @@
   },
   "dependencies": {
     "angular": "^1.4.8",
-    "angular-route": "^1.4.8",
     "angular-ui-router": "^0.2.15",
     "ngstorage": "^0.3.10"
   }
