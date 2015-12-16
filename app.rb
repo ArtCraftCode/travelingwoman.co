@@ -2,9 +2,6 @@ require 'sinatra'
 require 'omniauth-ravelry'
 require 'sinatra/reloader' if development?
 
-DEVELOPMENT = false
-DEVELOPMENT = true if development?
-
 configure do
   set :sessions, true
   use Rack::Session::Cookie
