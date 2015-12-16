@@ -17,8 +17,12 @@ helpers do
 end
 
 get '/' do
-  redirect to('/auth/ravelry') unless current_user
+  redirect to('/login') unless current_user
   haml :index
+end
+
+get '/login' do
+  haml :login
 end
 
 post '/auth/:name/callback' do
