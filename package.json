@@ -1,0 +1,40 @@
+{
+  "name": "studio-web",
+  "version": "1.0.0",
+  "description": "ui for studio",
+  "main": "src/scripts/index.js",
+  "scripts": {
+    "copy:html": "cp src/*.html dist/ && cp -r src/templates/ dist/templates/",
+    "copy:static": "cp -r src/assets/ dist/assets/ && cp src/scss/font_awesome.css dist/css/font_awesome.css",
+    "build": "echo '... building' npm run minify:js -s && npm run build:css",
+    "build:js": "browserify src/scripts/index.js -o dist/js/index.js",
+    "build:css": "node-sass --include-path scss src/scss/main.scss dist/css/main.css",
+    "build:dev": "npm run build:css & npm run build:js & npm run copy:html",
+    "minify:js": "echo '... minify:js' && uglifyjs src/scripts/index.js -o dist/js/index.min.js",
+    "start": "npm run watch & http-server dist/",
+    "watch": "nodemon --watch src/ -e scss,js,html -x 'npm run build:dev'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ArtCraftCode/studio-web.git"
+  },
+  "author": "@feministy",
+  "license": "mine",
+  "bugs": {
+    "url": "https://github.com/ArtCraftCode/studio-web/issues"
+  },
+  "homepage": "https://github.com/ArtCraftCode/studio-web",
+  "devDependencies": {
+    "browserify": "^12.0.1",
+    "http-server": "^0.8.5",
+    "node-sass": "^3.4.2",
+    "nodemon": "^1.8.1",
+    "uglify-js": "^2.6.1"
+  },
+  "dependencies": {
+    "angular": "^1.4.8",
+    "angular-route": "^1.4.8",
+    "angular-ui-router": "^0.2.15",
+    "ngstorage": "^0.3.10"
+  }
+}
