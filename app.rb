@@ -25,9 +25,12 @@ helpers do
 end
 
 get '/' do
-  redirect to('/login') unless current_user
-  set_user unless @user
-  haml :index
+  if current_user
+    set_user unless @user
+    haml :index
+  else 
+    haml :login
+  end
 end
 
 get '/login' do
@@ -37,7 +40,7 @@ end
 get '/logout' do
   session[:uid] = nil
   @user = nil
-  haml :login
+  redirect to('/')
 end
 
 post '/auth/:name/callback' do
