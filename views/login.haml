@@ -7,13 +7,14 @@
   / <![endif]
   %head
     %meta{:charset => "utf-8"}
-      %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}
-        %title Traveling Woman by Liz Abinante
-        %meta{:content => "", :name => "description"}
-          %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}
-            %link{:href => "css/normalize.css", :rel => "stylesheet"}
-            %link{:href => "css/skeleton.css", :rel => "stylesheet"}
-            %link{:href => "css/main.css", :rel => "stylesheet"}
+    %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}
+    %title Traveling Woman by Liz Abinante
+    %meta{:content => "", :name => "description"}
+    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}
+    %link{:href => "css/normalize.css", :rel => "stylesheet"}
+    %link{:href => "css/skeleton.css", :rel => "stylesheet"}
+    %link{:href => "css/main.css", :rel => "stylesheet"}
+    - include_gon(:camel_case => true)
   %body
     #background
     %nav

@@ -1,9 +1,14 @@
 require 'sinatra'
 require 'omniauth-ravelry'
-require 'sinatra/reloader' if development?
 require 'json'
-require 'pry'
-require 'pry-nav'
+require 'gon-sinatra'
+
+# dev gems
+require 'pry' if development?
+require 'pry-nav' if development?
+require 'sinatra/reloader' if development?
+
+Sinatra::register Gon::Sinatra
 
 configure do
   set :sessions, true
