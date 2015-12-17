@@ -39,6 +39,14 @@ nav {
     nav a:hover {
       color: #fff;
       background-color: rgba(0, 0, 0, 0.6); }
+  nav.logged-in {
+    background-color: #fff;
+    color: #222; }
+    nav.logged-in a {
+      color: #1EAEDB; }
+      nav.logged-in a:hover {
+        background-color: #fff;
+        color: #0FA0CE; }
 
 footer {
   background-color: rgba(0, 0, 0, 0.4);
@@ -62,15 +70,31 @@ footer {
     footer a:hover {
       color: #fff;
       background-color: rgba(0, 0, 0, 0.6); }
+  footer.legal {
+    background-color: #fff;
+    text-transform: none;
+    font-weight: 400;
+    color: #999; }
+    footer.legal ul {
+      text-align: center; }
+
+.lead {
+  font-size: 175%;
+  font-weight: 300; }
+
+.call-to-action {
+  font-size: 150%;
+  font-weight: 700;
+  text-align: center; }
+
+.separator {
+  text-align: center;
+  font-style: italic; }
 
 a {
   color: #333; }
   a:hover {
     color: #555; }
-
-.lead {
-  font-size: 175%;
-  font-weight: 300; }
 
 section {
   padding: 50px 0px; }
@@ -82,12 +106,3 @@ section {
   font-weight: 500;
   font-size: 80%;
   text-transform: uppercase; }
-
-.call-to-action {
-  font-size: 150%;
-  font-weight: 700;
-  text-align: center; }
-
-.separator {
-  text-align: center;
-  font-style: italic; }

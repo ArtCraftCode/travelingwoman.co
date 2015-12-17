@@ -1,16 +1,12 @@
 @import "background";
 @import "nav";
+@import "landing";
 
 a {
   color: #333;
   &:hover {
     color: #555;
   }
-}
-
-.lead {
-  font-size: 175%;
-  font-weight: 300;
 }
 
 section {
@@ -27,13 +23,3 @@ section {
   text-transform: uppercase;
 }
 
-.call-to-action {
-  font-size: 150%;
-  font-weight: 700;
-  text-align: center;
-}
-
-.separator {
-  text-align: center;
-  font-style: italic;
-}

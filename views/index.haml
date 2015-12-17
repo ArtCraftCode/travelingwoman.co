@@ -17,16 +17,49 @@
     %base{:href => "/#"}
     = include_gon(:namespace => 'ravelry')
   %body{"ng-app" => "travelingWoman"}
-    .nav
-      .menu-brand
-        Traveling Woman
-      .menu-main
-      .menu-user
-    .container
-      .row
-        .sidebar.two.columns
-        .content.ten.columns{"ng-controller" => "travelingWomanController"}
-          %p hello you are logged in!
+    %nav.logged-in
+      %ul
+        %li Logged in as: _USERNAME_
+        %li
+          %a{ :href => '' } Legend
+        %li
+          %a{ :href => '' } Row-by-Row Stitch Counts
+        %li
+          %a{ :href => 'http://www.ravelry.com/discuss/traveling-woman/2883745/' } Pattern help
+        %li
+          %a{ :href => '/logout' } Logout
+    %section
+      .container
+        .row
+          .columns.twelve
+            %h1.title Traveling Woman
+            %h2.author Designed by Liz Abinante
+        .row
+          %h3 Materials
+          %table
+            %thead
+              %tr
+                %th Yarn
+                %th Size
+                %th Depth
+                %th Wingspan
+                %th Yardage
+            %tbody
+              %tr
+                %td Lace
+                %td Medium
+                %td 16"
+                %td 57"
+                %td 470 yards
+          %h3 Notions
+          %ul
+            %li 4 stitch markers
+            %li darning needle
+    %footer.legal
+      %ul
+        %li
+          %strong Copyright &copy; 2015 Liz Abinante
+        %li You have the right to print & use this pattern only for your personal non-commercial use. You may sell items made from this pattern for charitable causes.
     %script{:src => "//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"}
     :javascript
       window.jQuery || document.write('<\/script>')

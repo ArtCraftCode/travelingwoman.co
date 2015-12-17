@@ -32,9 +32,30 @@ nav {
   @include menu;
   position: absolute;
   top: 0px;
+  &.logged-in {
+    background-color: #fff;
+    color: #222;
+    a {
+      color: #1EAEDB;
+      &:hover {
+        background-color: #fff;
+        color: #0FA0CE;
+      }
+    }
+  }
 }
 
 footer {
   @include menu;
   background-color: #222;
+
+  &.legal {
+    background-color: #fff;
+    text-transform: none;
+    font-weight: 400;
+    color: #999;
+    ul {
+      text-align: center;
+    }
+  }
 }
