@@ -1,44 +1,39 @@
-$sizes: (
-  large: (
-    width: 1200,
-    height: 335
-  ),
+@import "background";
+@import "nav";
 
-  medium: (
-    width: 800,
-    height: 220
-  ),
-
-  small: (
-    width: 600,
-    height: 165
-  )
-);
-
-
-@mixin landscape($size) {
-  $image: getget($size, width);
-  $height: getget($size, height);
-
-  #background {
-    background-image: url("../images/crop-#{$image}.jpg");
-    background-size: 100%;
-    height: #{$height*0.5}px;
+a {
+  color: #333;
+  &:hover {
+    color: #555;
   }
 }
 
-@function getget($size, $dimension) {
-  @return map-get(map-get($sizes, $size), $dimension);
+.lead {
+  font-size: 175%;
+  font-weight: 300;
 }
 
-@media (min-width: #{(getget(medium, width) + 1)}px) {
-  @include landscape(large);
+section {
+  padding: 50px 0px;
 }
 
-@media (max-width: #{getget(medium, width)}px) {
-  @include landscape(medium);
+.title {
+  font-weight: 900;
 }
 
-@media (max-width: #{getget(small, width)}px) {
-  @include landscape(small);
+.author {
+  font-weight: 500;
+  font-size: 80%;
+  text-transform: uppercase;
+}
+
+.call-to-action {
+  font-size: 150%;
+  font-weight: 700;
+  text-align: center;
+}
+
+.separator {
+  text-align: center;
+  font-style: italic;
 }

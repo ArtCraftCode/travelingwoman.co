@@ -1,0 +1,40 @@
+@mixin menu {
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 100%;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 80%;
+  color: #fff;
+
+  ul {
+    margin: 0px;
+    width: 100%;
+    text-align: right;
+  }
+
+  li {
+    display: inline-block;
+    padding: 15px 10px 10px 10px;
+  }
+
+  a {
+    color: #fff;
+    padding: 10px;
+    text-decoration: none;
+    &:hover {
+      color: #fff;
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+  }
+}
+
+nav {
+  @include menu;
+  position: absolute;
+  top: 0px;
+}
+
+footer {
+  @include menu;
+  background-color: #222;
+}
