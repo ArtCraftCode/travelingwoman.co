@@ -2,6 +2,8 @@ GEM
   remote: https://rubygems.org/
   specs:
     backports (3.6.7)
+    gon-sinatra (0.1.2)
+      sinatra
     haml (4.0.7)
       tilt
     hashie (2.1.2)
@@ -39,6 +41,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  gon-sinatra
   haml
   omniauth-ravelry
   sinatra

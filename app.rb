@@ -8,7 +8,6 @@ require 'pry' if development?
 require 'pry-nav' if development?
 require 'sinatra/reloader' if development?
 
-Sinatra::register Gon::Sinatra
 
 configure do
   set :sessions, true
@@ -16,6 +15,7 @@ configure do
   use OmniAuth::Builder do
     provider :ravelry, ENV['RAV_ACCESS'], ENV['RAV_SECRET']
   end
+  Sinatra::register Gon::Sinatra
 end
 
 helpers do
@@ -25,7 +25,9 @@ helpers do
 
   def set_user
     info = session[:info]
-    @user = { username: info['nickname'], first_name: info['first_name'] }.to_json
+    user = { username: info['nickname'], first_name: info['first_name'] }
+    gon.user = user
+    @user = user
   end
 end
 
