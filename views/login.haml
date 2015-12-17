@@ -14,8 +14,7 @@
             %link{:href => "css/normalize.css", :rel => "stylesheet"}
             %link{:href => "css/skeleton.css", :rel => "stylesheet"}
             %link{:href => "css/main.css", :rel => "stylesheet"}
-              %base{:href => "/#"}
-  %body{"ng-app" => "travelingWoman"}
+  %body
     .nav
       .menu-brand
         Traveling Woman
@@ -24,7 +23,7 @@
     .container
       .row
         .sidebar.two.columns
-        .content.ten.columns{"ng-controller" => "travelingWomanController"}
+        .content.ten.columns
           %p you are not logged in
     %script{:src => "//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"}
     :javascript
