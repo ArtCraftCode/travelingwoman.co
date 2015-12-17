@@ -1,0 +1,17 @@
+@media (min-width: 801px) {
+  #background {
+    background-image: url("../images/crop-1200.jpg");
+    background-size: 100%;
+    height: 167.5px; } }
+
+@media (max-width: 800px) {
+  #background {
+    background-image: url("../images/crop-800.jpg");
+    background-size: 100%;
+    height: 110px; } }
+
+@media (max-width: 600px) {
+  #background {
+    background-image: url("../images/crop-600.jpg");
+    background-size: 100%;
+    height: 82.5px; } }

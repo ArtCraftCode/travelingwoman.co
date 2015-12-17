@@ -1,0 +1,44 @@
+$sizes: (
+  large: (
+    width: 1200,
+    height: 335
+  ),
+
+  medium: (
+    width: 800,
+    height: 220
+  ),
+
+  small: (
+    width: 600,
+    height: 165
+  )
+);
+
+
+@mixin landscape($size) {
+  $image: getget($size, width);
+  $height: getget($size, height);
+
+  #background {
+    background-image: url("../images/crop-#{$image}.jpg");
+    background-size: 100%;
+    height: #{$height*0.5}px;
+  }
+}
+
+@function getget($size, $dimension) {
+  @return map-get(map-get($sizes, $size), $dimension);
+}
+
+@media (min-width: #{(getget(medium, width) + 1)}px) {
+  @include landscape(large);
+}
+
+@media (max-width: #{getget(medium, width)}px) {
+  @include landscape(medium);
+}
+
+@media (max-width: #{getget(small, width)}px) {
+  @include landscape(small);
+}
