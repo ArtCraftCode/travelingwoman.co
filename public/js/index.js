@@ -33637,6 +33637,7 @@ travelingWoman.controller('travelingWomanController', function($http, $scope, $s
   $scope.materials = materialsList
   $scope.sortOrder = 'weight'
   $scope.reverse = false
+  $scope.measurements = 'in'
 
   $scope.sort = function(orderBy) {
     if ($scope.sortOrder == orderBy) {
@@ -33646,7 +33647,10 @@ travelingWoman.controller('travelingWomanController', function($http, $scope, $s
       $scope.reverse = false
     }
   }
-  // sad nothing to do here
+
+  $scope.convert = function(convertTo) {
+    $scope.measurements = convertTo
+  }
 })
 
 },{"../../node_modules/angular-ui-router/build/angular-ui-router":1,"../../node_modules/angular/angular":2,"../../node_modules/ngstorage/ngStorage":4,"./materials":6}],6:[function(require,module,exports){

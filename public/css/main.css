@@ -91,6 +91,31 @@ footer {
   text-align: center;
   font-style: italic; }
 
+.materials {
+  font-size: 80%; }
+  .materials .material {
+    background-color: #f2f2f2;
+    padding: 25px 15px 5px 15px;
+    margin: 10px 0px; }
+  .materials h4 {
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 100%; }
+  .materials ul {
+    margin: 0px;
+    padding: 0 0 20px 0; }
+    .materials ul.sortable li {
+      cursor: pointer; }
+  .materials li {
+    display: inline-block;
+    padding: 0px 10px 0px 0px;
+    text-transform: uppercase;
+    font-weight: 500; }
+    .materials li:first-child {
+      font-weight: 800; }
+    .materials li.selected {
+      color: red; }
+
 a {
   color: #333; }
   a:hover {
@@ -106,3 +131,8 @@ section {
   font-weight: 500;
   font-size: 80%;
   text-transform: uppercase; }
+
+.highlight {
+  padding: 5px;
+  background-color: yellow;
+  font-weight: 500; }

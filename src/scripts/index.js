@@ -19,6 +19,7 @@ travelingWoman.controller('travelingWomanController', function($http, $scope, $s
   $scope.materials = materialsList
   $scope.sortOrder = 'weight'
   $scope.reverse = false
+  $scope.measurements = 'in'
 
   $scope.sort = function(orderBy) {
     if ($scope.sortOrder == orderBy) {
@@ -28,5 +29,8 @@ travelingWoman.controller('travelingWomanController', function($http, $scope, $s
       $scope.reverse = false
     }
   }
-  // sad nothing to do here
+
+  $scope.convert = function(convertTo) {
+    $scope.measurements = convertTo
+  }
 })

@@ -1,0 +1,36 @@
+.materials {
+  font-size: 80%;
+
+  .material {
+    background-color: darken(#fff, 5%);
+    padding: 25px 15px 5px 15px;
+    margin: 10px 0px;
+  }
+
+  h4 {
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 100%;
+  }
+
+  ul {
+    margin: 0px;
+    padding: 0 0 20px 0;
+    &.sortable li {
+      cursor: pointer;
+    }
+  }
+
+  li {
+    display: inline-block;
+    padding: 0px 10px 0px 0px;
+    text-transform: uppercase;
+    font-weight: 500;
+    &:first-child {
+      font-weight: 800;
+    }
+    &.selected {
+      color: red;
+    }
+  }
+}

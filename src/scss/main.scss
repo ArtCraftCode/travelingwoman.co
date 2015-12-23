@@ -1,6 +1,7 @@
 @import "background";
 @import "nav";
 @import "landing";
+@import "materials";
 
 a {
   color: #333;
@@ -21,5 +22,11 @@ section {
   font-weight: 500;
   font-size: 80%;
   text-transform: uppercase;
+}
+
+.highlight {
+  padding: 5px;
+  background-color: yellow;
+  font-weight: 500;
 }
 
