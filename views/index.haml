@@ -28,7 +28,7 @@
           %a{ :href => 'http://www.ravelry.com/discuss/traveling-woman/2883745/' } Pattern help
         %li
           %a{ :href => '/logout' } Logout
-    %section
+    %section{ "ng-controller" => "travelingWomanController" }
       .container
         .row
           .columns.twelve
@@ -39,18 +39,18 @@
           %table
             %thead
               %tr
-                %th Yarn
-                %th Size
-                %th Depth
-                %th Wingspan
-                %th Yardage
+                %th{ "ng-click" => "sort('weight')" } Yarn
+                %th{ "ng-click" => "sort('sized')" } Size
+                %th{ "ng-click" => "sort('depth')" } Depth
+                %th{ "ng-click" => "sort('wingspan')" } Wingspan
+                %th{ "ng-click" => "sort('yards')" } Yardage
             %tbody
-              %tr
-                %td Lace
-                %td Medium
-                %td 16"
-                %td 57"
-                %td 470 yards
+              %tr{ "ng-repeat" => "material in materials | orderBy:sortOrder:reverse" }
+                %td {{ material.yarn }}
+                %td {{ material.size }}
+                %td {{ material.depth}}"
+                %td {{ material.wingspan }}"
+                %td {{ material.yards }} yards
           %h3 Notions
           %ul
             %li 4 stitch markers
@@ -60,6 +60,8 @@
         %li
           %strong Copyright &copy; 2015 Liz Abinante
         %li You have the right to print & use this pattern only for your personal non-commercial use. You may sell items made from this pattern for charitable causes.
-    %script{:src => "//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"}
+    -# %script{:src => "//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"}
+    %script{:src => "/js/jquery.min.js"}
+    %script{:src => "/js/index.js" }
     :javascript
       window.jQuery || document.write('<\/script>')
