@@ -1,0 +1,54 @@
+!!!
+/[if lt IE 7] <html class="no-js lt-ie9 lt-ie8 lt-ie7">
+/[if IE 7] <html class="no-js lt-ie9 lt-ie8">
+/[if IE 8] <html class="no-js lt-ie9">
+/ [if gt IE 8]><!
+%html.no-js
+  / <![endif]
+  %head
+    %meta{:charset => "utf-8"}
+    %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}
+    %title Traveling Woman by Liz Abinante
+    %meta{:content => "", :name => "description"}
+    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}
+    %link{:href => "css/normalize.css", :rel => "stylesheet"}
+    %link{:href => "css/skeleton.css", :rel => "stylesheet"}
+    %link{:href => "css/main.css", :rel => "stylesheet"}
+    - include_gon(:camel_case => true)
+  %body
+    #background
+    %nav
+      %ul
+        %li
+          %a{ :href => '/auth/ravelry'} Log In with Ravelry
+        %li
+          %a{ :href => 'http://www.ravelry.com/purchase/feministy/20831'} Buy Pattern
+        %li
+          %a{ :href => 'http://dl.dropbox.com/u/2135660/TravelingWoman-v1point3.pdf' } Download Free Version
+    %section#about
+      .container
+        .twelve.columns
+          %h1.title Traveling Woman
+          %h2.author designed by Liz Abinante
+          %p.lead
+            A uniquely simple lace shawl.
+          %p
+            Traveling Woman is a popular, easy-to-work knitting pattern that is well suited for advanced and beginning knitters. It has more than 8,000 projects on Ravelry!
+          %p
+            Originally released as a free pattern, Traveling Woman is easy to customize and knit in any size you like. The premium version ($6 USD) includes written and charted instructions for 11 sizes in 5 different yarn weights and is now available as an online pattern!
+          %p
+            Sign in with your Ravelry account to access the online version of the full, premium Traveling Woman pattern, including all features and customizations available in the PDF version. Carry the pattern with you everywhere you go!
+          %h3.call-to-action
+            %a{ :href => '/auth/ravelry'} Sign in with Ravelry to access the online version!
+          %h3.separator
+            or
+          %h3.call-to-action
+            %a{ :href => 'http://www.ravelry.com/purchase/feministy/20831'} Buy Traveling Woman ($6)
+    %footer
+      %ul
+        %li You are not logged in.
+        %li
+          %a{ :href => '#'} Login with Ravelry
+    %script{:src => "//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"}
+    :javascript
+      window.jQuery || document.write('<\/script>')

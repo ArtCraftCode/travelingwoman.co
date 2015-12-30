@@ -1,0 +1,61 @@
+@mixin menu {
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 100%;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 80%;
+  color: #fff;
+
+  ul {
+    margin: 0px;
+    width: 100%;
+    text-align: right;
+  }
+
+  li {
+    display: inline-block;
+    padding: 15px 10px 10px 10px;
+  }
+
+  a {
+    color: #fff;
+    padding: 10px;
+    text-decoration: none;
+    &:hover {
+      color: #fff;
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+  }
+}
+
+nav {
+  @include menu;
+  position: absolute;
+  top: 0px;
+  &.logged-in {
+    background-color: #fff;
+    color: #222;
+    a {
+      color: #1EAEDB;
+      &:hover {
+        background-color: #fff;
+        color: #0FA0CE;
+      }
+    }
+  }
+}
+
+footer {
+  @include menu;
+  background-color: #222;
+
+  &.legal {
+    background-color: #fff;
+    text-transform: none;
+    font-weight: 400;
+    color: #999;
+    ul {
+      text-align: center;
+    }
+  }
+}

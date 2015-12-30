@@ -1,0 +1,32 @@
+@import "background";
+@import "nav";
+@import "landing";
+@import "materials";
+
+a {
+  color: #333;
+  &:hover {
+    color: #555;
+  }
+}
+
+section {
+  padding: 50px 0px;
+}
+
+.title {
+  font-weight: 900;
+}
+
+.author {
+  font-weight: 500;
+  font-size: 80%;
+  text-transform: uppercase;
+}
+
+.highlight {
+  padding: 5px;
+  background-color: yellow;
+  font-weight: 500;
+}
+
