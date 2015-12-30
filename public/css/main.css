@@ -91,30 +91,50 @@ footer {
   text-align: center;
   font-style: italic; }
 
-.materials {
-  font-size: 80%; }
-  .materials .material {
-    background-color: #f2f2f2;
-    padding: 25px 15px 5px 15px;
-    margin: 10px 0px; }
-  .materials h4 {
+.materials .material {
+  border: 1px solid #f2f2f2;
+  padding: 15px;
+  margin: 10px;
+  width: 28%;
+  float: left; }
+  .materials .material:hover {
+    border: 1px solid #999999;
+    background-color: #e3f6fb;
+    cursor: pointer; }
+
+.materials .info {
+  display: flex; }
+  .materials .info .title {
+    flex: 1 0;
     text-transform: uppercase;
-    font-weight: 800;
-    font-size: 100%; }
-  .materials ul {
-    margin: 0px;
-    padding: 0 0 20px 0; }
-    .materials ul.sortable li {
-      cursor: pointer; }
-  .materials li {
-    display: inline-block;
-    padding: 0px 10px 0px 0px;
-    text-transform: uppercase;
-    font-weight: 500; }
-    .materials li:first-child {
-      font-weight: 800; }
-    .materials li.selected {
-      color: red; }
+    text-align: right;
+    padding-right: 5px; }
+  .materials .info .details {
+    flex: 1 0; }
+
+.materials .header {
+  padding-bottom: 10px; }
+
+.materials h4 {
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 100%; }
+
+.materials ul {
+  margin: 0px;
+  padding: 0 0 20px 0; }
+  .materials ul.sortable li {
+    cursor: pointer; }
+
+.materials li {
+  display: inline-block;
+  padding: 0px 10px 0px 0px;
+  text-transform: uppercase;
+  font-weight: 500; }
+  .materials li:first-child {
+    font-weight: 800; }
+  .materials li.selected {
+    color: #1EAEDB; }
 
 a {
   color: #333; }

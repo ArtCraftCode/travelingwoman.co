@@ -34,42 +34,39 @@
           .columns.twelve
             %h1.title Traveling Woman
             %h2.author Designed by Liz Abinante
+            %strong How to use this pattern
+            %p Simply select a pre-determined size below and then configure your options. Be sure to print your pattern or save the PDF: customized patterns are not saved.
         .row
-          .columns.four.materials
-            %h3 Materials
-            %h4 Notions:
-            %p 4 stitch markers, darning needle
-
+          .columns.twelve.materials
             %ul.sortable
               %li Sort by:
               %li{ "ng-click" => "sort('weight')", "ng-class" => "{ selected: sortOrder === 'weight' }" } Yarn weight
               %li{ "ng-click" => "sort('sized')", "ng-class" => "{ selected: sortOrder === 'sized' }" } Size label
               %li{ "ng-click" => "sort('depth')", "ng-class" => "{ selected: sortOrder === 'depth' }" } Depth
               %li{ "ng-click" => "sort('wingspan')", "ng-class" => "{ selected: sortOrder === 'wingspan' }" } Wingspan
-              %li{ "ng-click" => "sort('yards')", "ng-class" => "{ selected: sortOrder === 'yards' }" } Yardage
+              %li{ "ng-click" => "sort('yards')", "ng-class" => "{ selected: sortOrder === 'yards' }" } Yardage / Meters
             %ul.sortable
               %li Display materials in:
               %li{ "ng-class" => "{ selected: measurements === 'in' }" } Inches / Yards
               %li{ "ng-class" => "{ selected: measurements === 'cm' }" } Centimeters / Meters
             .material{ "ng-repeat" => "material in materials | orderBy:sortOrder:reverse" }
-              %h4 {{ material.yarn }} : : {{ material.size }}
-              %p Finished size: {{ material.depth }}" depth, {{ material.wingspan }}" wingspan
-              %p Approximately {{ material.yards }} yards required.
-          .columns.eight
-            %h3 How to use this pattern
-            %p Welcome to the digital edition of Traveling Woman! Here you'll find the original pattern reproduced in an easy-to-use online format, with an option to print your own custom PDF. You can view the pattern using one of the pre-written sets of instructions, or create a completely custom pattern.
-
-            %h4 Pre-written instructions
-
-            %p Pre-written instructions are step-by-step, and include row-by-row stitch counts as well as finished sizes and yardage estimates.
-
-            %p Simply select a size from the menu on the left and you're ready to knit!
-
-            %h4 Create custom instructions
-
-            %p.highlight Important! Custom instructions do not include finished size measurements, yardage estimates, and row-by-row stitch counts.
-
-            %p To begin creating custom instructions for your Traveling Woman, click here.
+              .header
+                .info
+                  .title Size
+                  .details {{ material.size }}
+                .info
+                  .title Yarn
+                  .details {{ material.yarn }}
+              .info
+                .title Depth
+                .details {{ material.depth }} inches
+              .info
+                .title Wingspan
+                .details {{ material.wingspan }} inches
+              .info
+                .title Yards
+                .details {{ material.yards }}
+  
     %footer.legal
       %ul
         %li
