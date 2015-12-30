@@ -4,6 +4,8 @@ require('../../node_modules/ngstorage/ngStorage')
 
 require('./materials')
 
+var _ = require('lodash')
+
 var travelingWoman = angular.module('travelingWoman', [
   // angular
   'ui.router',
@@ -18,6 +20,7 @@ travelingWoman.controller('travelingWomanController', function($http, $scope, $s
   $scope.name = "travelingWomanController"
   $scope.materials = materialsList
   $scope.sortOrder = 'weight'
+  $scope.showWeight = 5
   $scope.reverse = false
   $scope.measurements = 'in'
 
@@ -27,6 +30,22 @@ travelingWoman.controller('travelingWomanController', function($http, $scope, $s
     } else {
       $scope.sortOrder = orderBy
       $scope.reverse = false
+    }
+  }
+
+  $scope.show = function(showWeight) {
+    $scope.showWeight = showWeight
+    if (showWeight === 5) {
+      $scope.materials = materialsList
+    } else if (showWeight === 2) {
+      // sport & dk is a special case
+      $scope.materials = _.filter(materialsList, function(material) {
+        return material.weight === 2 || material.weight === 3
+      })
+    } else {
+      $scope.materials = _.filter(materialsList, function(material) {
+        return material.weight === showWeight
+      })
     }
   }
 

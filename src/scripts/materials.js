@@ -18,7 +18,8 @@ materials.value('materialsList', [
     wingspan: 70,
     yards: 500,
     weight: 0,
-    sized: 4
+    sized: 4,
+    photo: 'lace.jpg'
   },
   {
     yarn: 'fingering',
@@ -27,7 +28,8 @@ materials.value('materialsList', [
     wingspan: 48,
     yards: 310,
     weight: 1,
-    sized: 0
+    sized: 0,
+    photo: 'fingering.jpg'
   },
   {
     yarn: 'fingering',
@@ -81,7 +83,8 @@ materials.value('materialsList', [
     wingspan: 72,
     yards: 520,
     weight: 3,
-    sized: 4
+    sized: 4,
+    photo: 'dk.jpg'
   },
   {
     yarn: 'worsted',
@@ -90,7 +93,8 @@ materials.value('materialsList', [
     wingspan: 60,
     yards: 390,
     weight: 4,
-    sized: 3
+    sized: 3,
+    photo: 'worsted.jpg'
   },
   {
     yarn: 'worsted',
