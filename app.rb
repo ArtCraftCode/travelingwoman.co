@@ -68,5 +68,5 @@ end
 get '/auth/ravelry/callback' do
   set_session
   set_user
-  json @user
+  redirect to('/')
 end
