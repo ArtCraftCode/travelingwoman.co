@@ -4,6 +4,8 @@ require 'omniauth-ravelry'
 require 'json'
 require 'gon-sinatra'
 
+require_relative 'user'
+
 # dev gems
 require 'pry' if development?
 require 'pry-nav' if development?
@@ -24,9 +26,8 @@ helpers do
   end
 
   def set_user
-    info = session[:info]
-    @user = { username: info['nickname'], first_name: info['first_name'] }
-    gon.user = @user
+    @user = User.new(session[:uid], session[:info][:first_name])
+    gon.user = @user.data
     @user
   end
 
@@ -45,7 +46,7 @@ end
 get '/' do
   if current_user
     set_user unless @user
-    json [@user, session[:uid], session[:info]]
+    haml :index
   else 
     haml :login
   end
