@@ -19,7 +19,9 @@
   %body{"ng-app" => "travelingWoman"}
     %nav.logged-in
       %ul
-        %li Logged in as: _USERNAME_
+        %li
+          Logged in as:
+          = @user.first_name
         %li
           %a{ :href => '' } Legend
         %li
