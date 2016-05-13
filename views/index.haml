@@ -19,7 +19,9 @@
   %body{"ng-app" => "travelingWoman"}
     %nav.logged-in
       %ul
-        %li Logged in as: _USERNAME_
+        %li
+          Logged in as:
+          = @user.first_name
         %li
           %a{ :href => '' } Legend
         %li
@@ -33,7 +35,6 @@
         .row
           .columns.twelve
             %h1.title Traveling Woman
-            %h2.author Designed by Liz Abinante
         .row
           .columns.three.materials
             %ul.sortable
@@ -56,7 +57,10 @@
               %li{ "ng-class" => "{ selected: measurements === 'cm' }" } Centimeters / Meters
           .columns.nine.materials
             %strong How to use this pattern
-            %p Simply select a pre-determined size below and then configure your options. Be sure to print your pattern or save the PDF: customized patterns are not saved.
+            %p Simply select a pre-determined size below and then configure your options.
+
+            %p
+              %strong Be sure to print your pattern or save the PDF: customized patterns are not saved.
             .row.material{ "ng-repeat" => "material in materials | orderBy:sortOrder:reverse" }
               .row
                 .columns.four

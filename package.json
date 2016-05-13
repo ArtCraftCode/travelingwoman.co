@@ -10,7 +10,7 @@
     "build:css": "node-sass --include-path scss src/scss/main.scss public/css/main.css",
     "build:dev": "npm run build:css & npm run build:js",
     "minify:js": "echo '... minify:js' && uglifyjs src/scripts/index.js -o public/js/index.min.js",
-    "start": "npm run watch & http-server public/",
+    "start": "npm run watch",
     "watch": "nodemon --watch src/ -e scss,js -x 'npm run build:dev'"
   },
   "repository": {
