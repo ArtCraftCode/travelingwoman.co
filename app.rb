@@ -2,6 +2,7 @@ require 'sinatra'
 require 'sinatra/json'
 require 'omniauth-ravelry'
 require 'json'
+require 'gon-sinatra'
 
 # dev gems
 require 'pry' if development?
@@ -14,6 +15,7 @@ configure do
   use OmniAuth::Builder do
     provider :ravelry, ENV['RAV_ACCESS'], ENV['RAV_SECRET']
   end
+  Sinatra::register Gon::Sinatra
 end
 
 helpers do
@@ -24,6 +26,8 @@ helpers do
   def set_user
     info = session[:info]
     @user = { username: info['nickname'], first_name: info['first_name'] }
+    gon.user = @user
+    @user
   end
 
   def clear_session

@@ -3,6 +3,8 @@ GEM
   specs:
     backports (3.6.7)
     coderay (1.1.0)
+    gon-sinatra (0.1.2)
+      sinatra
     haml (4.0.7)
       tilt
     hashie (2.1.2)
@@ -48,9 +50,16 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  gon-sinatra
   haml
   omniauth-ravelry
   pry
   pry-nav
   sinatra
   sinatra-contrib
+
+RUBY VERSION
+   ruby 2.3.1p112
+
+BUNDLED WITH
+   1.12.3
