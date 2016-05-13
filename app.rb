@@ -1,21 +1,19 @@
 require 'sinatra'
+require 'sinatra/json'
 require 'omniauth-ravelry'
 require 'json'
-require 'gon-sinatra'
 
 # dev gems
 require 'pry' if development?
 require 'pry-nav' if development?
 require 'sinatra/reloader' if development?
 
-
 configure do
   set :sessions, true
-  use Rack::Session::Cookie
+  set :session_secret, 'super secret'
   use OmniAuth::Builder do
     provider :ravelry, ENV['RAV_ACCESS'], ENV['RAV_SECRET']
   end
-  Sinatra::register Gon::Sinatra
 end
 
 helpers do
@@ -25,16 +23,25 @@ helpers do
 
   def set_user
     info = session[:info]
-    user = { username: info['nickname'], first_name: info['first_name'] }
-    gon.user = user
-    @user = user
+    @user = { username: info['nickname'], first_name: info['first_name'] }
+  end
+
+  def clear_session
+    session[:info] = nil
+    session[:uid] = nil
+    @user = nil
+  end
+
+  def set_session
+    session[:uid] = request.env['omniauth.auth']['uid']
+    session[:info] = request.env['omniauth.auth']['info']
   end
 end
 
 get '/' do
   if current_user
     set_user unless @user
-    haml :index
+    json [@user, session[:uid], session[:info]]
   else 
     haml :login
   end
@@ -45,8 +52,7 @@ get '/login' do
 end
 
 get '/logout' do
-  session[:uid] = nil
-  @user = nil
+  clear_session
   redirect to('/')
 end
 
@@ -55,9 +61,7 @@ post '/auth/:name/callback' do
 end
 
 get '/auth/ravelry/callback' do
-  session[:uid] = request.env['omniauth.auth']['uid']
-  session[:info] = request.env['omniauth.auth']['info']
+  set_session
   set_user
-  puts @user
-  redirect to('/')
+  json @user
 end
