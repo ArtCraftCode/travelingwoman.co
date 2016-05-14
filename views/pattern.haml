@@ -1,0 +1,52 @@
+!!!
+/[if lt IE 7] <html class="no-js lt-ie9 lt-ie8 lt-ie7">
+/[if IE 7] <html class="no-js lt-ie9 lt-ie8">
+/[if IE 8] <html class="no-js lt-ie9">
+/ [if gt IE 8]><!
+%html.no-js
+  / <![endif]
+  %head
+    %meta{:charset => "utf-8"}
+    %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}
+    %title Traveling Woman by Liz Abinante
+    %meta{:content => "", :name => "description"}
+    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}
+    %link{:href => "/css/normalize.css", :rel => "stylesheet"}
+    %link{:href => "/css/skeleton.css", :rel => "stylesheet"}
+    %link{:href => "/css/main.css", :rel => "stylesheet"}
+    %base{:href => "/#"}
+    = include_gon(:namespace => 'ravelry')
+  %body{"ng-app" => "travelingWoman"}
+    %nav.logged-in
+      %ul
+        %li
+          %strong Logged in as:
+          = @user.username
+        %li
+          %a{ :href => 'http://www.ravelry.com/discuss/traveling-woman/2883745/' } Pattern help
+        %li
+          %a{ :href => '/logout' } Logout
+    %section{ "ng-controller" => "travelingWomanController" }
+      .container    
+        .row
+          .columns.twelve.content
+            %img{ src: '/images/header.png', width: '377px', alt: 'Traveling Woman'}
+
+
+        .row
+          .columns.two
+            = haml :_menu
+
+          .columns.ten
+            = yield
+
+  
+    %footer.legal
+      %ul
+        %li
+          %strong Copyright &copy; 2016 Liz Abinante
+        %li You have the right to print & use this pattern only for your personal non-commercial use. You may sell items made from this pattern for charitable causes.
+    %script{:src => "//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"}
+    %script{:src => "/js/index.js" }
+    :javascript
+      window.jQuery || document.write('<\/script>')
