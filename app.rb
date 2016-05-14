@@ -21,6 +21,11 @@ configure do
 end
 
 helpers do
+  def authenticate!
+    redirect to('/') unless current_user || @user
+    set_user
+  end
+
   def current_user
     !session[:uid].nil?
   end
@@ -43,14 +48,46 @@ helpers do
   end
 end
 
+before '/pattern/*' do
+  authenticate!
+end
+
 get '/' do
   if current_user
     set_user unless @user
-    haml :index
+    haml :index, layout: :pattern
   else 
     haml :login
   end
 end
+
+# PATTERN RENDERING
+
+get '/pattern/notes' do
+  haml :notes, layout: :pattern
+end
+
+get '/pattern/charts' do
+  haml :charts, layout: :pattern
+end
+
+get '/pattern/customizations' do
+  haml :customizations, layout: :pattern
+end
+
+get '/pattern/custom-sizing' do
+  haml :custom_sizing, layout: :pattern
+end
+
+get '/pattern/stitch-counts' do
+  haml :stitch_counts, layout: :pattern
+end
+
+get '/pattern/photos' do
+  haml :photos, layout: :pattern
+end
+
+# LOGGING IN AND OUT
 
 get '/login' do
   haml :login
