@@ -1,55 +1,38 @@
 require('../../node_modules/angular/angular')
-require('../../node_modules/angular-ui-router/build/angular-ui-router')
-require('../../node_modules/ngstorage/ngStorage')
+// var _ = require('lodash')
 
-require('./materials')
+$('.size-info').hide();
 
-var _ = require('lodash')
+$('td.details').mouseover(function(event) {
+  event.preventDefault();
+  $(this).find('.circle').hide();
+  $(this).find('.size-info').show();
+})
 
-var travelingWoman = angular.module('travelingWoman', [
-  // angular
-  'ui.router',
-  'ngStorage',
+$('td.details').mouseout(function(event) {
+  event.preventDefault();
+  $(this).find('.circle').show();
+  $(this).find('.size-info').hide();
+})
 
-  // my stuff
-  'Materials'
-])
+var travelingWoman = angular.module('travelingWoman', [])
 
-// main controller
-travelingWoman.controller('travelingWomanController', function($http, $scope, $state, materialsList) {
-  $scope.name = "travelingWomanController"
-  $scope.materials = materialsList
-  $scope.sortOrder = 'weight'
-  $scope.showWeight = 5
-  $scope.reverse = false
-  $scope.measurements = 'in'
+travelingWoman.controller('travelingWomanController', function ($scope) {
+  // stuff
+})
 
-  $scope.sort = function(orderBy) {
-    if ($scope.sortOrder == orderBy) {
-      $scope.reverse = !$scope.reverse
-    } else {
-      $scope.sortOrder = orderBy
-      $scope.reverse = false
-    }
+travelingWoman.filter('inchesCentimeters', function () {
+  return function (input) {
+    var inches = parseInt(input, 10);
+    var cms = inches * 2.54;
+    return inches + '" / ' + Math.round(cms, 0) + 'cm';
   }
+})
 
-  $scope.show = function(showWeight) {
-    $scope.showWeight = showWeight
-    if (showWeight === 5) {
-      $scope.materials = materialsList
-    } else if (showWeight === 2) {
-      // sport & dk is a special case
-      $scope.materials = _.filter(materialsList, function(material) {
-        return material.weight === 2 || material.weight === 3
-      })
-    } else {
-      $scope.materials = _.filter(materialsList, function(material) {
-        return material.weight === showWeight
-      })
-    }
-  }
-
-  $scope.convert = function(convertTo) {
-    $scope.measurements = convertTo
+travelingWoman.filter('yardsMeters', function () {
+  return function (input) {
+    var yards = parseInt(input, 10);
+    var meters = yards * 0.9144;
+    return yards + 'yd / ' + Math.round(meters, 0) + 'm';
   }
 })
