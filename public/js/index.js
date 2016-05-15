@@ -29023,14 +29023,12 @@ require('../../node_modules/angular/angular')
 
 $('.size-info').hide();
 
-$('td.details').mouseover(function(event) {
-  event.preventDefault();
+$('td.details').mouseover(function() {
   $(this).find('.circle').hide();
   $(this).find('.size-info').show();
 })
 
-$('td.details').mouseout(function(event) {
-  event.preventDefault();
+$('td.details').mouseout(function() {
   $(this).find('.circle').show();
   $(this).find('.size-info').hide();
 })

@@ -4,6 +4,7 @@ require 'omniauth-ravelry'
 require 'json'
 require 'gon-sinatra'
 
+require_relative 'pattern'
 require_relative 'user'
 
 # dev gems
@@ -85,6 +86,15 @@ end
 
 get '/pattern/photos' do
   haml :photos, layout: :pattern
+end
+
+get '/pattern/sizes/:label' do
+  @pattern = Pattern.find(params['label'])
+  if @pattern
+    haml :size, layout: :pattern
+  else
+    # do an error page or something
+  end
 end
 
 # LOGGING IN AND OUT
